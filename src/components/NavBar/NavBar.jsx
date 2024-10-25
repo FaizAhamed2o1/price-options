@@ -32,12 +32,21 @@ const NavBar = () => {
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav>
-      <div className="md:hidden  text-xl" onClick={() => setIsOpen(!isOpen)}>
+    <nav className="relative p-6">
+      <div
+        className={`md:hidden w-fit text-xl transition-transform duration-600 ease-in-out ${
+          isOpen ? "rotate-180" : ""
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {isOpen ? <RiCloseFill /> : <RiMenu2Fill />}
       </div>
 
-      <ul className="md:flex md:space-x-10">
+      <ul
+        className={`md:flex md:space-x-10 md:static md:opacity-100 absolute px-6 bg-yellow-200 shadow-lg duration-500 ${
+          isOpen ? "top-16 opacity-100" : "-top-60 opacity-0"
+        }`}
+      >
         {routes.map((route) => (
           <Links key={route.id} route={route}></Links>
         ))}
