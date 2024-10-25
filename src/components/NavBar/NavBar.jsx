@@ -43,7 +43,7 @@ const NavBar = () => {
       </div>
 
       <ul
-        className={`md:flex md:space-x-10 md:static md:opacity-100 absolute px-6 bg-yellow-200 shadow-lg duration-500 ${
+        className={`md:flex md:space-x-10 md:static md:opacity-100 absolute px-6 bg-yellow-200 shadow-lg duration-500  ${
           isOpen ? "top-16 opacity-100" : "-top-60 opacity-0"
         }`}
       >
